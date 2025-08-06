@@ -76,12 +76,12 @@ const CONFIG = {
       color_2: '#4082c3'
     },
     {
-      title_1: 'FinalCutPro',
-      img_1: '/images/heo/20233e777652412247dd57fd9b48cf997c01070702.webp',
+      title_1: 'Python',
+      img_1: '/images/heo/20235c0731cd4c0c95fc136a8db961fdf963071502.webp',
       color_1: '#ffffff',
-      title_2: 'Python',
-      img_2: '/images/heo/20235c0731cd4c0c95fc136a8db961fdf963071502.webp',
-      color_2: '#ffffff'
+      title_2: 'FinalCutPro',
+      img_2: '/images/heo/20233e777652412247dd57fd9b48cf997c01070702.webp',
+      color_2: '#ffffff',
     },
     {
       title_1: 'Swift',
@@ -92,8 +92,8 @@ const CONFIG = {
       color_2: '#8f55ba'
     },
     {
-      title_1: 'illustrator',
-      img_1: '/images/heo/20237359d71b45ab77829cee5972e36f8c30073902.webp',
+      title_1: 'powerbi',
+      img_1: '/images/heo/powerbi.webp',
       color_1: '#f29e39',
       title_2: 'CSS3',
       img_2: '/images/heo/20237c548846044a20dad68a13c0f0e1502f074602.webp',
