@@ -79,17 +79,17 @@ const CONFIG = {
       title_1: 'Python',
       img_1: '/images/heo/20235c0731cd4c0c95fc136a8db961fdf963071502.webp',
       color_1: '#ffffff',
-      title_2: 'FinalCutPro',
-      img_2: '/images/heo/20233e777652412247dd57fd9b48cf997c01070702.webp',
+      title_2: 'sql',
+      img_2: '/images/heo/sql.webp',
       color_2: '#ffffff',
     },
     {
-      title_1: 'Swift',
-      img_1: '/images/heo/202328bbee0b314297917b327df4a704db5c072402.webp',
-      color_1: '#eb6840',
-      title_2: 'Principle',
-      img_2: '/images/heo/2023f76570d2770c8e84801f7e107cd911b5073202.webp',
-      color_2: '#8f55ba'
+      title_1: 'pycharm',
+      img_1: '/images/heo/PyCharm_Icon.webp',
+      color_1: '#ffffff',
+      title_2: 'nextjs',
+      img_2: '/images/heo/nextjs.webp',
+      color_2: '#ffffff'
     },
     {
       title_1: 'powerbi',
@@ -97,7 +97,7 @@ const CONFIG = {
       color_1: '#ffffff',
       title_2: 'azure',
       img_2: '/images/heo/azure.webp',
-      color_2: '#2c51db'
+      color_2: '#ffffff'
     },
     {
       title_1: 'JS',
