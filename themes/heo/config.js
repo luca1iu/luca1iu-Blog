@@ -54,7 +54,7 @@ const CONFIG = {
   HEO_INFO_CARD_ICON1: 'fas fa-user',
   HEO_INFO_CARD_URL2: 'https://github.com/luca1iu',
   HEO_INFO_CARD_ICON2: 'fab fa-github',
-  HEO_INFO_CARD_URL3: 'https://www.luca-liu.com'
+  HEO_INFO_CARD_URL3: 'https://www.luca-liu.com',
 
 
   // 用户技能图标
