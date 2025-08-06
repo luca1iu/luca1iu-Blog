@@ -25,8 +25,8 @@
 # Google Search Console 验证码
 NEXT_PUBLIC_SEO_GOOGLE_SITE_VERIFICATION=your_google_verification_code
 
-# Bing Webmaster Tools 验证码
-NEXT_PUBLIC_SEO_BING_SITE_VERIFICATION=your_bing_verification_code
+# Bing Webmaster Tools 验证码（已配置）
+NEXT_PUBLIC_SEO_BING_SITE_VERIFICATION=1DF0928616EFF82BC2F23E7AD02F602C
 
 # 百度站长工具验证码（可选）
 NEXT_PUBLIC_SEO_BAIDU_SITE_VERIFICATION=your_baidu_verification_code

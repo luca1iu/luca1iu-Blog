@@ -31,7 +31,7 @@ module.exports = {
     process.env.NEXT_PUBLIC_SEO_BAIDU_SITE_VERIFICATION || '', // Remove the value or replace it with your own google site verification code
 
   SEO_BING_SITE_VERIFICATION:
-    process.env.NEXT_PUBLIC_SEO_BING_SITE_VERIFICATION || '', // Bing Webmaster Tools verification code
+    process.env.NEXT_PUBLIC_SEO_BING_SITE_VERIFICATION || '1DF0928616EFF82BC2F23E7AD02F602C', // Bing Webmaster Tools verification code
 
   // 微软 Clarity 站点分析
   CLARITY_ID: process.env.NEXT_PUBLIC_CLARITY_ID || null // 只需要复制Clarity脚本中的ID部分，ID是一个十位的英文数字组合
