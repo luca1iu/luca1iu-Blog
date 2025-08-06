@@ -71,9 +71,9 @@ const CONFIG = {
       title_1: 'Docker',
       img_1: '/images/heo/20231108a540b2862d26f8850172e4ea58ed075102.webp',
       color_1: '#57b6e6',
-      title_2: 'Photoshop',
-      img_2: '/images/heo/2023e4058a91608ea41751c4f102b131f267075902.webp',
-      color_2: '#4082c3'
+      title_2: 'excel',
+      img_2: '/images/heo/excel.webp',
+      color_2: '#ffffff'
     },
     {
       title_1: 'Python',
@@ -94,9 +94,9 @@ const CONFIG = {
     {
       title_1: 'powerbi',
       img_1: '/images/heo/powerbi.webp',
-      color_1: '#f29e39',
-      title_2: 'CSS3',
-      img_2: '/images/heo/20237c548846044a20dad68a13c0f0e1502f074602.webp',
+      color_1: '#ffffff',
+      title_2: 'azure',
+      img_2: '/images/heo/azure.webp',
       color_2: '#2c51db'
     },
     {
@@ -111,9 +111,9 @@ const CONFIG = {
       title_1: 'Git',
       img_1: '/images/heo/2023ffa5707c4e25b6beb3e6a3d286ede4c6071102.webp',
       color_1: '#df5b40',
-      title_2: 'Rhino',
-      img_2: '/images/heo/20231ca53fa0b09a3ff1df89acd7515e9516173302.webp',
-      color_2: '#1f1f1f'
+      title_2: 'tableau',
+      img_2: '/images/heo/tableau.webp',
+      color_2: '#ffffff'
     }
   ],
 
