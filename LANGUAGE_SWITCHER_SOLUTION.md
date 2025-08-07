@@ -127,4 +127,16 @@ const handleClick = (e) => {
 2. 点击任何包含语言前缀的菜单项（如 `/de`）
 3. 验证是否正确跳转到 `https://yourdomain.com/de/`
 
-这个解决方案完全解决了你提到的URL路径叠加问题，现在菜单链接会正确地跳转到对应的语言页面，而不是在当前路径后面添加语言前缀。 
+这个解决方案完全解决了你提到的URL路径叠加问题，现在菜单链接会正确地跳转到对应的语言页面，而不是在当前路径后面添加语言前缀。
+
+## 部署到 Vercel
+
+现在你可以将修改推送到 GitHub，Vercel 会自动重新部署：
+
+```bash
+git add .
+git commit -m "Fix multi-language menu URL issue with SmartMenuLink component"
+git push
+```
+
+部署完成后，你就可以在 Vercel 上测试语言切换功能了！ 
