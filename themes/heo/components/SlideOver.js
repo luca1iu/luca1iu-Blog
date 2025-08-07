@@ -12,7 +12,6 @@ import {
 } from 'react'
 import { MenuListSide } from './MenuListSide'
 import TagGroups from './TagGroups'
-import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 /**
  * 侧边抽屉
@@ -94,14 +93,6 @@ export default function SlideOver(props) {
                       <section className='space-y-2 flex flex-col'>
                         {/* 切换深色模式 */}
                         <DarkModeBlockButton />
-                      </section>
-
-                      <section className='space-y-2 flex flex-col'>
-                        {/* 语言切换器 */}
-                        <div className='space-y-2'>
-                          <div className='text-sm font-medium'>语言 / Language</div>
-                          <LanguageSwitcher />
-                        </div>
                       </section>
 
                       <section className='space-y-2 flex flex-col'>

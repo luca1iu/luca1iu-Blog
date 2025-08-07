@@ -1,4 +1,5 @@
 import SmartLink from '@/components/SmartLink'
+import SmartMenuLink from '@/components/SmartMenuLink'
 import { useState } from 'react'
 
 export const MenuItemDrop = ({ link }) => {
@@ -15,12 +16,12 @@ export const MenuItemDrop = ({ link }) => {
       onMouseOut={() => changeShow(false)}>
       {/* 不含子菜单 */}
       {!hasSubMenu && (
-        <SmartLink
+        <SmartMenuLink
           target={link?.target}
           href={link?.href}
           className=' hover:bg-black hover:bg-opacity-10 rounded-2xl flex justify-center items-center px-3 py-1 no-underline tracking-widest'>
           {link?.icon && <i className={link?.icon} />} {link?.name}
-        </SmartLink>
+        </SmartMenuLink>
       )}
       {/* 含子菜单的按钮 */}
       {hasSubMenu && (
@@ -44,12 +45,12 @@ export const MenuItemDrop = ({ link }) => {
               <li
                 key={index}
                 className='cursor-pointer hover:bg-blue-600 dark:hover:bg-yellow-600 hover:text-white text-gray-900 dark:text-gray-100  tracking-widest transition-all duration-200 py-1 pr-6 pl-3'>
-                <SmartLink href={sLink.href} target={link?.target}>
+                <SmartMenuLink href={sLink.href} target={link?.target}>
                   <span className='text-sm text-nowrap font-extralight'>
                     {link?.icon && <i className={sLink?.icon}> &nbsp; </i>}
                     {sLink.title}
                   </span>
-                </SmartLink>
+                </SmartMenuLink>
               </li>
             )
           })}
