@@ -117,6 +117,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { prefix }, locale }) {
   let fullSlug = prefix
   const from = `slug-props-${fullSlug}`
+  
+  // 从查询参数中获取 locale，如果没有则使用传入的 locale
+  // 注意：在 getStaticProps 中，我们需要通过其他方式获取查询参数
   const props = await getGlobalData({ from, locale })
   if (siteConfig('PSEUDO_STATIC', false, props.NOTION_CONFIG)) {
     if (!fullSlug.endsWith('.html')) {

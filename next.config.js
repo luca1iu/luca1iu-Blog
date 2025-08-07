@@ -150,17 +150,17 @@ const nextConfig = {
           langsRewrites.push(
             {
               source: `/:locale(${langs.join('|')})/:path*`,
-              destination: '/:path*'
+              destination: '/:path*?locale=:locale'
             },
             // 匹配没有路径的情况，例如 [domain]/zh 或 [domain]/en
             {
               source: `/:locale(${langs.join('|')})`,
-              destination: '/'
+              destination: '/?locale=:locale'
             },
             // 匹配没有路径的情况，例如 [domain]/zh/ 或 [domain]/en/
             {
               source: `/:locale(${langs.join('|')})/`,
-              destination: '/'
+              destination: '/?locale=:locale'
             }
           )
         }
