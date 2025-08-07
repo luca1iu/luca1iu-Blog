@@ -16,19 +16,29 @@ const locales = (function () {
   // 根据BLOG_NOTION_PAGE_ID 检查支持多少种语言数据.
   // 支持如下格式配置多个语言的页面id xxx,zh:xxx,en:xxx
   const langs = [BLOG.LANG]
+  console.log('[next.config.js] Default language:', BLOG.LANG)
+  console.log('[next.config.js] NOTION_PAGE_ID:', BLOG.NOTION_PAGE_ID)
+  
   if (BLOG.NOTION_PAGE_ID.indexOf(',') > 0) {
     const siteIds = BLOG.NOTION_PAGE_ID.split(',')
+    console.log('[next.config.js] Found siteIds:', siteIds)
+    
     for (let index = 0; index < siteIds.length; index++) {
       const siteId = siteIds[index]
       const prefix = extractLangPrefix(siteId)
+      console.log('[next.config.js] Processing siteId:', siteId, 'prefix:', prefix)
+      
       // 如果包含前缀 例如 zh , en 等
       if (prefix) {
         if (!langs.includes(prefix)) {
           langs.push(prefix)
+          console.log('[next.config.js] Added language:', prefix)
         }
       }
     }
   }
+  
+  console.log('[next.config.js] Final supported locales:', langs)
   return langs
 })()
 
@@ -147,6 +157,7 @@ const nextConfig = {
 
           // 映射多语言
           // 示例： source: '/:locale(zh|en)/:path*' ; :locale() 会将语言放入重写后的 `?locale=` 中。
+          console.log('[next.config.js] Creating rewrites for languages:', langs)
           langsRewrites.push(
             {
               source: `/:locale(${langs.join('|')})/:path*`,
