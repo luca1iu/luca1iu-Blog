@@ -20,7 +20,6 @@ const Header = props => {
   const [fixedNav, setFixedNav] = useState(false)
   const [textWhite, setTextWhite] = useState(false)
   const [navBgWhite, setBgWhite] = useState(false)
-  const [activeIndex, setActiveIndex] = useState(0)
 
   const router = useRouter()
   const slideOverRef = useRef()
@@ -63,38 +62,6 @@ const Header = props => {
     window.addEventListener('scroll', scrollTrigger)
     return () => {
       window.removeEventListener('scroll', scrollTrigger)
-    }
-  }, [])
-
-  // 导航栏根据滚动轮播菜单内容
-  useEffect(() => {
-    let prevScrollY = 0
-    let ticking = false
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY
-          if (currentScrollY > prevScrollY) {
-            setActiveIndex(1) // 向下滚动时设置activeIndex为1
-          } else {
-            setActiveIndex(0) // 向上滚动时设置activeIndex为0
-          }
-          prevScrollY = currentScrollY
-          ticking = false
-        })
-        ticking = true
-      }
-    }
-
-    if (isBrowser) {
-      window.addEventListener('scroll', handleScroll)
-    }
-
-    return () => {
-      if (isBrowser) {
-        window.removeEventListener('scroll', handleScroll)
-      }
     }
   }, [])
 
@@ -148,21 +115,9 @@ const Header = props => {
           {/* 左侧logo */}
           <Logo {...props} />
 
-          {/* 中间菜单 */}
-          <div
-            id='nav-bar-swipe'
-            className={`hidden lg:flex flex-grow flex-col items-center justify-center h-full relative w-full`}>
-            <div
-              className={`absolute transition-all duration-700 ${activeIndex === 0 ? 'opacity-100 mt-0' : '-mt-20 opacity-0 invisible'}`}>
-              <MenuListTop {...props} />
-            </div>
-            <div
-              className={`absolute transition-all duration-700 ${activeIndex === 1 ? 'opacity-100 mb-0' : '-mb-20 opacity-0 invisible'}`}>
-              <h1 className='font-bold text-center text-light-400 dark:text-gray-400'>
-                {siteConfig('AUTHOR') || siteConfig('TITLE')}{' '}
-                {siteConfig('BIO') && <>|</>} {siteConfig('BIO')}
-              </h1>
-            </div>
+          {/* 中间菜单 - 固定显示，不随滚动变化 */}
+          <div className='hidden lg:flex flex-grow flex-col items-center justify-center h-full relative w-full'>
+            <MenuListTop {...props} />
           </div>
 
           {/* 右侧固定 */}
