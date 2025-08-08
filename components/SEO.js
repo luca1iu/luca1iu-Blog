@@ -115,6 +115,17 @@ const SEO = props => {
       />
       <meta name='robots' content='follow, index' />
       <meta charSet='UTF-8' />
+      
+      {/* Favicon配置 */}
+      <link rel='icon' href={favicon} />
+      <link rel='icon' type='image/x-icon' href={favicon} />
+      <link rel='shortcut icon' href={favicon} />
+      <link rel='apple-touch-icon' href={favicon} />
+      <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+      <link rel='icon' type='image/png' sizes='32x32' href={favicon} />
+      <link rel='icon' type='image/png' sizes='16x16' href={favicon} />
+      <link rel='icon' type='image/png' sizes='48x48' href={favicon} />
+      
       {SEO_GOOGLE_SITE_VERIFICATION && (
         <meta
           name='google-site-verification'
@@ -145,8 +156,6 @@ const SEO = props => {
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:title' content={title} />
-
-      <link rel='icon' href={BLOG_FAVICON} />
 
       {COMMENT_WEBMENTION_ENABLE && (
         <>
