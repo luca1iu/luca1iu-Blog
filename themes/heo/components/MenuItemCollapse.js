@@ -1,6 +1,7 @@
 import Collapse from '@/components/Collapse'
 import SmartLink from '@/components/SmartLink'
 import SmartMenuLink from '@/components/SmartMenuLink'
+import MultiLanguageMenu from '@/components/MultiLanguageMenu'
 import { useState } from 'react'
 
 /**
@@ -35,6 +36,7 @@ export const MenuItemCollapse = ({ link }) => {
           <SmartMenuLink
             href={link?.href}
             target={link?.target}
+            link={link}
             className='font-extralight  flex justify-between pl-2 pr-4 dark:text-gray-200 no-underline tracking-widest'>
             <span className=' transition-all items-center duration-200'>
               {link?.icon && <i className={link.icon + ' mr-4'} />}
@@ -64,7 +66,7 @@ export const MenuItemCollapse = ({ link }) => {
               <div
                 key={index}
                 className='dark:bg-hexo-black-gray dark:text-gray-200 text-left px-3 justify-start bg-gray-50 hover:bg-gray-50 dark:hover:bg-gray-900 tracking-widest transition-all duration-200  py-3 pr-6'>
-                <SmartMenuLink href={sLink.href} target={link?.target}>
+                <SmartMenuLink href={sLink.href} target={link?.target} link={sLink}>
                   <span className='text-sm ml-4 whitespace-nowrap'>
                     {link?.icon && <i className={sLink.icon + ' mr-2'} />}{' '}
                     {sLink.title}

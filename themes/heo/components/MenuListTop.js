@@ -2,6 +2,7 @@ import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import CONFIG from '../config'
 import { MenuItemDrop } from './MenuItemDrop'
+import LanguageMenu from '@/components/LanguageMenu'
 
 export const MenuListTop = props => {
   const { customNav, customMenu } = props
@@ -53,6 +54,10 @@ export const MenuListTop = props => {
           (link, index) =>
             link && link.show && <MenuItemDrop key={index} link={link} />
         )}
+        {/* 添加语言菜单 - 直接渲染，不通过 MenuItemDrop */}
+        <div className="flex">
+          <LanguageMenu />
+        </div>
       </nav>
     </>
   )

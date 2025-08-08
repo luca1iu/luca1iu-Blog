@@ -6,8 +6,9 @@ import BLOG from '@/blog.config'
 /**
  * 智能菜单链接组件
  * 能够正确处理多语言菜单链接，避免URL路径叠加问题
+ * 注意：此组件仅用于菜单项，不应用于其他链接
  */
-const SmartMenuLink = ({ href, children, ...rest }) => {
+const SmartMenuLink = ({ href, children, link, ...rest }) => {
   const router = useRouter()
   const { lang } = useGlobal()
 
@@ -55,9 +56,13 @@ const SmartMenuLink = ({ href, children, ...rest }) => {
     
     let finalHref = targetHref
     
-    // 如果目标链接包含语言前缀
-    if (targetLang) {
-      // 如果当前也在某个语言页面，但语言不同，直接跳转到目标语言页面
+    // 特殊处理：如果目标链接是语言根路径（如 /de, /zh），且当前在另一个语言页面
+    // 则直接跳转到目标语言根路径，而不是在当前路径后追加
+    if (targetLang && currentLang && currentLang !== targetLang) {
+      // 确保跳转到语言根路径
+      finalHref = `/${targetLang}`
+    } else if (targetLang) {
+      // 如果目标链接包含语言前缀
       if (currentLang && currentLang !== targetLang) {
         finalHref = targetHref
       } else if (!currentLang) {
@@ -75,6 +80,14 @@ const SmartMenuLink = ({ href, children, ...rest }) => {
       }
     }
     
+    // 对于语言菜单的特殊处理 - 完全忽略，让 LanguageMenu 组件处理
+    const isLanguageMenu = link?.name === '中文' || link?.name === 'Deutsch' || link?.name === 'English'
+    if (isLanguageMenu) {
+      // 如果是语言菜单，直接阻止处理，让 LanguageMenu 组件处理
+      e.preventDefault()
+      return
+    }
+    
     // 确保路径以 / 开头
     if (!finalHref.startsWith('/')) {
       finalHref = '/' + finalHref
@@ -84,8 +97,11 @@ const SmartMenuLink = ({ href, children, ...rest }) => {
     router.push(finalHref)
   }
 
+  // 确保 href 在服务器端和客户端一致
+  const displayHref = href || '#'
+  
   return (
-    <a href={href} onClick={handleClick} {...rest}>
+    <a href={displayHref} onClick={handleClick} {...rest}>
       {children}
     </a>
   )

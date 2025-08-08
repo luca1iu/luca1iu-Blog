@@ -2,6 +2,7 @@ import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import CONFIG from '../config'
 import { MenuItemCollapse } from './MenuItemCollapse'
+import LanguageMenu from '@/components/LanguageMenu'
 
 export const MenuListSide = props => {
   const { customNav, customMenu } = props
@@ -52,6 +53,10 @@ export const MenuListSide = props => {
       {links?.map((link, index) => (
         <MenuItemCollapse key={index} link={link} />
       ))}
+      {/* 添加语言菜单 - 直接渲染，不通过 MenuItemCollapse */}
+      <div className='select-none w-full p-2 border dark:border-gray-600 rounded-lg text-left dark:bg-[#1e1e1e]'>
+        <LanguageMenu />
+      </div>
     </nav>
   )
 }
