@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import '@/styles/utility-patterns.css'
 import '@/styles/smiley-sans.css' // Smiley Sans 得意黑字体
 import '@/styles/prism-vsc-dark-plus.css' // VSCode Dark Plus 代码主题
+import '@/styles/devto-fonts.css' // DEV.to 风格字体
 
 // core styles shared by all of react-notion-x (required)
 import '@/styles/notion.css' //  重写部分notion样式
