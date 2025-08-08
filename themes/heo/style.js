@@ -9,6 +9,17 @@ const Style = () => {
     <style jsx global>{`
       body {
         background-color: #f7f9fe;
+        font-family: 'Smiley Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+
+      // 标题使用 Smiley Sans
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Smiley Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+
+      // 导航菜单使用 Smiley Sans
+      nav, .nav, .menu {
+        font-family: 'Smiley Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       }
 
       // 公告栏中的字体固定白色

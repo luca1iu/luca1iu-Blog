@@ -1,0 +1,52 @@
+/* Smiley Sans 得意黑字体配置 */
+@font-face {
+  font-family: 'Smiley Sans';
+  src: url('/fonts/smiley-sans/SmileySans-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Smiley Sans';
+  src: url('/fonts/smiley-sans/SmileySans-Oblique.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 定义字体变量 */
+:root {
+  --font-smiley-sans: 'Smiley Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* 应用字体到全局 */
+body {
+  font-family: var(--font-smiley-sans);
+}
+
+/* 标题使用 Smiley Sans */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-smiley-sans);
+  font-weight: bold;
+}
+
+/* 导航菜单使用 Smiley Sans */
+nav, .nav, .menu {
+  font-family: var(--font-smiley-sans);
+}
+
+/* 按钮使用 Smiley Sans */
+button, .btn {
+  font-family: var(--font-smiley-sans);
+}
+
+/* 文章内容使用 Smiley Sans */
+.article-content, .post-content, .blog-content {
+  font-family: var(--font-smiley-sans);
+}
+
+/* 代码块保持等宽字体 */
+pre, code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+} 
