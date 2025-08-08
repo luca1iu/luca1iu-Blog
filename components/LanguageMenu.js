@@ -81,40 +81,41 @@ const LanguageMenu = () => {
   // 获取当前语言
   const currentLang = supportedLanguages.find(lang => currentPath.startsWith(`/${lang}`))
   
-  // 如果当前在根页面，显示所有语言菜单
-  const showAllLanguages = !currentLang
-
   // 在服务器端渲染时不显示任何内容，避免水合错误
   if (!mounted) {
     return null
   }
 
+  // 如果当前在根页面（英文），只显示中文和德文菜单
+  if (!currentLang) {
+    return (
+      <div className="flex space-x-2">
+        {supportedLanguages.filter(lang => lang !== 'en').map(lang => (
+          <button
+            key={lang}
+            onClick={() => handleLanguageSwitch(lang)}
+            className="hover:bg-black hover:bg-opacity-10 rounded-2xl flex justify-center items-center px-3 py-1 no-underline tracking-widest cursor-pointer dark:text-gray-200"
+          >
+            {languageMenus[lang]?.name || lang}
+          </button>
+        ))}
+      </div>
+    )
+  }
+
+  // 在语言页面显示其他两个语言的菜单（不包括当前语言）
   return (
-    <>
-      {showAllLanguages ? (
-        // 在根页面显示所有语言菜单
-        supportedLanguages.map(lang => (
-          <button
-            key={lang}
-            onClick={() => handleLanguageSwitch(lang)}
-            className="hover:bg-black hover:bg-opacity-10 rounded-2xl flex justify-center items-center px-3 py-1 no-underline tracking-widest cursor-pointer dark:text-gray-200"
-          >
-            {languageMenus[lang]?.name || lang}
-          </button>
-        ))
-      ) : (
-        // 在语言页面显示其他两个语言的菜单
-        supportedLanguages.filter(lang => lang !== currentLang).map(lang => (
-          <button
-            key={lang}
-            onClick={() => handleLanguageSwitch(lang)}
-            className="hover:bg-black hover:bg-opacity-10 rounded-2xl flex justify-center items-center px-3 py-1 no-underline tracking-widest cursor-pointer dark:text-gray-200"
-          >
-            {languageMenus[lang]?.name || lang}
-          </button>
-        ))
-      )}
-    </>
+    <div className="flex space-x-2">
+      {supportedLanguages.filter(lang => lang !== currentLang).map(lang => (
+        <button
+          key={lang}
+          onClick={() => handleLanguageSwitch(lang)}
+          className="hover:bg-black hover:bg-opacity-10 rounded-2xl flex justify-center items-center px-3 py-1 no-underline tracking-widest cursor-pointer dark:text-gray-200"
+        >
+          {languageMenus[lang]?.name || lang}
+        </button>
+      ))}
+    </div>
   )
 }
 
