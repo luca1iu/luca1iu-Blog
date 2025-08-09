@@ -655,12 +655,13 @@ svg.notion-page-icon {
 }
 
 .notion-inline-code {
-  color: #c7254e;
+  color: #8B0000 !important;
   padding: 0.2em 0.4em;
-  background: #f9f2f4;
-  border: 1px solid #e1b4cb;
+  background: #FFF8DC !important;
+  border: 1px solid #D2B48C !important;
   border-radius: 3px;
   font-size: 85%;
+  font-weight: 600;
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
 }
@@ -840,7 +841,7 @@ code[class*='language-'] {
   overflow: auto;
   font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
-  @apply w-full mb-0 dark:bg-black !important;
+  @apply w-full mb-0;
 }
 
 .notion-column {
@@ -1007,7 +1008,7 @@ code[class*='language-'] {
   border: 1px solid var(--fg-color-0);
 }
 
-.dark-mode .notion-callout {
+.dark .notion-callout {
   border-color: var(--bg-color-2);
 }
 

@@ -58,7 +58,7 @@ pre, code {
 }
 
 /* 深色模式下的内联代码 */
-.dark-mode :not(pre) > code {
+.dark :not(pre) > code {
   background-color: #2d3748;
   color: #e2e8f0;
 }

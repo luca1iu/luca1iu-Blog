@@ -296,11 +296,11 @@ pre[class*="language-"] > code[class*="language-"] {
 	padding: 0 !important;
 }
 
-/* 确保代码块在深色模式下正确显示 */
-.dark-mode .notion-code {
+/* 注释掉以允许Gruvbox主题背景色生效 */
+/* .dark .notion-code {
 	background-color: #1e1e1e !important;
 	border-color: #3c3c3c !important;
-}
+} */
 
 /* 代码工具栏样式 */
 .code-toolbar {

@@ -90,17 +90,38 @@ h6 {
 
 /* 内联代码样式 */
 :not(pre) > code {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Liberation Mono', 'Courier New', monospace !important;
   font-size: 0.875em;
-  background-color: #f1f3f4;
+  color: #8B0000 !important;
+  background-color: #FFF8DC !important;
+  border: 1px solid #D2B48C !important;
   padding: 0.2em 0.4em;
   border-radius: 3px;
+  font-weight: 600;
+}
+
+/* 强制覆盖所有内联代码样式 */
+code:not(pre code):not([class*="language-"]),
+.notion code:not(pre code):not([class*="language-"]),
+.notion-inline-code,
+:not(pre) > code {
+  color: #8B0000 !important;
+  background-color: #FFF8DC !important;
+  border: 1px solid #D2B48C !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 3px !important;
+  font-weight: 600 !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Liberation Mono', 'Courier New', monospace !important;
 }
 
 /* 深色模式下的内联代码 */
-.dark :not(pre) > code {
-  background-color: #2d3748;
-  color: #e2e8f0;
+.dark :not(pre) > code,
+.dark code:not(pre code):not([class*="language-"]),
+.dark .notion code:not(pre code):not([class*="language-"]),
+.dark .notion-inline-code {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #4a5568 !important;
 }
 
 /* 列表样式 */

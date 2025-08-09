@@ -1,0 +1,207 @@
+/* 强制应用Gruvbox主题 - 确保在所有其他样式之后加载 */
+
+/* 移除代码块内所有元素的边框和装饰 */
+pre[class*="language-"] *,
+.notion-code * {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+.dark pre[class*="language-"] *,
+.dark .notion-code * {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+/* Light模式 - Gruvbox Light */
+.notion-code,
+pre[class*="language-"],
+code[class*="language-"] {
+  background: #f9f5d7 !important; /* Gruvbox Light bg0_h */
+  color: #3c3836 !important; /* Gruvbox Light fg1 */
+  font-size: 16px !important; /* 增加字体大小 */
+  line-height: 1.5 !important;
+}
+
+/* 确保代码块内的token没有额外背景和边框 */
+pre[class*="language-"] code,
+pre[class*="language-"] .token,
+.notion-code code,
+.notion-code .token,
+.notion-code span,
+pre[class*="language-"] span {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 防止内联代码样式影响代码块 */
+pre[class*="language-"] :not(pre) > code,
+.notion-code :not(pre) > code {
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Dark模式 - Gruvbox Dark */
+.dark .notion-code,
+.dark pre[class*="language-"],
+.dark code[class*="language-"] {
+  background: #1d2021 !important; /* Gruvbox Dark bg0_h */
+  color: #ebdbb2 !important; /* Gruvbox Dark fg1 */
+  font-size: 16px !important; /* 增加字体大小 */
+  line-height: 1.5 !important;
+}
+
+/* 确保代码块内的token没有额外背景和边框 */
+.dark pre[class*="language-"] code,
+.dark pre[class*="language-"] .token,
+.dark .notion-code code,
+.dark .notion-code .token,
+.dark .notion-code span,
+.dark pre[class*="language-"] span {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 防止内联代码样式影响代码块 */
+.dark pre[class*="language-"] :not(pre) > code,
+.dark .notion-code :not(pre) > code {
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 确保代码块容器也应用正确的背景和字体大小 */
+.notion .notion-code {
+  background: #f9f5d7 !important;
+  border-color: #d5c4a1 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.dark .notion .notion-code {
+  background: #1d2021 !important;
+  border-color: #665c54 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+/* 语法高亮颜色 - Light模式 */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #928374 !important; /* Gruvbox Light gray */
+}
+
+.token.punctuation {
+  color: #3c3836 !important;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #cc241d !important; /* Gruvbox Light red */
+}
+
+.token.boolean,
+.token.number {
+  color: #d65d0e !important; /* Gruvbox Light orange */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #98971a !important; /* Gruvbox Light green */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #689d6a !important; /* Gruvbox Light aqua */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #458588 !important; /* Gruvbox Light blue */
+}
+
+.token.function,
+.token.class-name {
+  color: #b16286 !important; /* Gruvbox Light purple */
+}
+
+/* 语法高亮颜色 - Dark模式 */
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.doctype,
+.dark .token.cdata {
+  color: #928374 !important; /* Gruvbox Dark gray */
+}
+
+.dark .token.punctuation {
+  color: #ebdbb2 !important;
+}
+
+.dark .token.property,
+.dark .token.tag,
+.dark .token.constant,
+.dark .token.symbol,
+.dark .token.deleted {
+  color: #fb4934 !important; /* Gruvbox Dark red */
+}
+
+.dark .token.boolean,
+.dark .token.number {
+  color: #fe8019 !important; /* Gruvbox Dark orange */
+}
+
+.dark .token.selector,
+.dark .token.attr-name,
+.dark .token.string,
+.dark .token.char,
+.dark .token.builtin,
+.dark .token.inserted {
+  color: #b8bb26 !important; /* Gruvbox Dark green */
+}
+
+.dark .token.operator,
+.dark .token.entity,
+.dark .token.url,
+.dark .language-css .token.string,
+.dark .style .token.string {
+  color: #8ec07c !important; /* Gruvbox Dark aqua */
+}
+
+.dark .token.atrule,
+.dark .token.attr-value,
+.dark .token.keyword {
+  color: #83a598 !important; /* Gruvbox Dark blue */
+}
+
+.dark .token.function,
+.dark .token.class-name {
+  color: #d3869b !important; /* Gruvbox Dark purple */
+}
