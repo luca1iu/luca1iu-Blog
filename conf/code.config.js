@@ -11,14 +11,14 @@ module.exports = {
   // 代码主题 @see https://github.com/PrismJS/prism-themes
   PRISM_THEME_PREFIX_PATH:
     process.env.NEXT_PUBLIC_PRISM_THEME_PREFIX_PATH ||
-    '/styles/prism-vsc-dark-plus.css', // 代码块默认主题 - VSCode Dark Plus
-  PRISM_THEME_SWITCH: process.env.NEXT_PUBLIC_PRISM_THEME_SWITCH || false, // 是否开启浅色/深色模式代码主题切换； 开启后将显示以下两个主题
+    '/styles/prism-gruvbox-light.css', // 代码块默认主题 - Gruvbox Light
+  PRISM_THEME_SWITCH: process.env.NEXT_PUBLIC_PRISM_THEME_SWITCH || true, // 是否开启浅色/深色模式代码主题切换； 开启后将显示以下两个主题
   PRISM_THEME_LIGHT_PATH:
     process.env.NEXT_PUBLIC_PRISM_THEME_LIGHT_PATH ||
-    '/styles/prism-vsc-dark-plus.css', // 浅色模式主题 - 统一使用 VSCode Dark Plus
+    '/styles/prism-gruvbox-light.css', // 浅色模式主题 - Gruvbox Light
   PRISM_THEME_DARK_PATH:
     process.env.NEXT_PUBLIC_PRISM_THEME_DARK_PATH ||
-    '/styles/prism-vsc-dark-plus.css', // 深色模式主题 - 统一使用 VSCode Dark Plus
+    '/styles/prism-gruvbox-dark.css', // 深色模式主题 - Gruvbox Dark
 
   CODE_MAC_BAR: process.env.NEXT_PUBLIC_CODE_MAC_BAR || false, // 代码左上角显示mac的红黄绿图标
   CODE_LINE_NUMBERS: process.env.NEXT_PUBLIC_CODE_LINE_NUMBERS || false, // 是否显示行号

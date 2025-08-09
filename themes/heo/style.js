@@ -72,7 +72,7 @@ const Style = () => {
       }
 
       // 深色模式下的内联代码
-      .dark-mode :not(pre) > code {
+      .dark :not(pre) > code {
         background-color: #2d3748;
         color: #e2e8f0;
       }
@@ -134,35 +134,43 @@ const Style = () => {
       }
 
       // 深色模式适配
-      .dark-mode {
+      .dark {
         background-color: #1a202c;
       }
 
-      .dark-mode body {
+      .dark body {
         background-color: #1a202c;
         color: #e2e8f0;
       }
 
-      .dark-mode .article-content,
-      .dark-mode .post-content,
-      .dark-mode .blog-content {
+      .dark .article-content,
+      .dark .post-content,
+      .dark .blog-content {
         color: #e2e8f0;
       }
 
-      .dark-mode h1,
-      .dark-mode h2,
-      .dark-mode h3,
-      .dark-mode h4,
-      .dark-mode h5,
-      .dark-mode h6 {
+      .dark h1,
+      .dark h2,
+      .dark h3,
+      .dark h4,
+      .dark h5,
+      .dark h6 {
         color: #f8f9fa;
       }
 
-      .dark-mode p,
-      .dark-mode ul,
-      .dark-mode ol,
-      .dark-mode blockquote {
+      .dark p,
+      .dark ul,
+      .dark ol,
+      .dark blockquote {
         color: #e2e8f0;
+      }
+
+      // 确保dark模式下所有文本都有正确颜色
+      .dark .notion,
+      .dark .notion-text,
+      .dark .notion-block,
+      .dark .notion-list li {
+        color: #e2e8f0 !important;
       }
     `}</style>
   )

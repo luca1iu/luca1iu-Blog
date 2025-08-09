@@ -67,6 +67,24 @@
   --notion-header-height: 45px;
 }
 
+/* Dark模式下的CSS变量 */
+.dark {
+  --fg-color: #e2e8f0 !important;
+  --fg-color-0: rgba(226, 232, 240, 0.09);
+  --fg-color-1: rgba(226, 232, 240, 0.16);
+  --fg-color-2: rgba(226, 232, 240, 0.4);
+  --fg-color-3: rgba(226, 232, 240, 0.6);
+  --fg-color-4: #f8f9fa;
+  --fg-color-5: rgba(226, 232, 240, 0.024);
+  --fg-color-6: rgba(226, 232, 240, 0.8);
+  --fg-color-icon: var(--fg-color);
+
+  --bg-color: #1a202c;
+  --bg-color-0: rgba(74, 85, 104, 0.15);
+  --bg-color-1: rgb(45, 55, 72);
+  --bg-color-2: rgba(74, 85, 104, 0.15);
+}
+
 .notion {
   font-size: 20px;
   line-height: 1.3;
@@ -637,9 +655,10 @@ svg.notion-page-icon {
 }
 
 .notion-inline-code {
-  color: #eb5757;
+  color: #c7254e;
   padding: 0.2em 0.4em;
-  background: var(--bg-color-2);
+  background: #f9f2f4;
+  border: 1px solid #e1b4cb;
   border-radius: 3px;
   font-size: 85%;
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
@@ -648,6 +667,46 @@ svg.notion-page-icon {
 
 .notion-inline-underscore {
   text-decoration: underline;
+}
+
+/* Dark模式下的内联代码样式 */
+.dark .notion-inline-code {
+  color: #ff7eb6;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+}
+
+/* Dark模式下的文本颜色 */
+.dark .notion {
+  color: #e2e8f0 !important;
+}
+
+.dark .notion-text {
+  color: #e2e8f0 !important;
+}
+
+.dark .notion-block {
+  color: #e2e8f0 !important;
+}
+
+.dark .notion-list li {
+  color: #e2e8f0 !important;
+}
+
+.dark .notion-page-content {
+  color: #e2e8f0 !important;
+}
+
+.dark p {
+  color: #e2e8f0 !important;
+}
+
+.dark span {
+  color: #e2e8f0 !important;
+}
+
+.dark div {
+  color: #e2e8f0 !important;
 }
 
 .notion-list {

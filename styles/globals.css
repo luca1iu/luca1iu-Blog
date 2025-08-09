@@ -98,7 +98,7 @@ h6 {
 }
 
 /* 深色模式下的内联代码 */
-.dark-mode :not(pre) > code {
+.dark :not(pre) > code {
   background-color: #2d3748;
   color: #e2e8f0;
 }
@@ -123,19 +123,49 @@ blockquote {
 }
 
 /* 深色模式适配 */
-.dark-mode {
+.dark {
   background-color: #1a202c;
 }
 
-.dark-mode body {
+.dark body {
   background-color: #1a202c;
   color: #e2e8f0;
 }
 
-.dark-mode .article-content,
-.dark-mode .post-content,
-.dark-mode .blog-content {
+.dark .article-content,
+.dark .post-content,
+.dark .blog-content {
   color: #e2e8f0;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #f8f9fa;
+}
+
+.dark p,
+.dark ul,
+.dark ol,
+.dark blockquote {
+  color: #e2e8f0 !important;
+}
+
+/* 强制覆盖dark模式下的所有文本颜色 */
+.dark * {
+  color: #e2e8f0 !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #f8f9fa !important;
 }
 
 .wrapper {
