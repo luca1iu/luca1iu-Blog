@@ -21,6 +21,11 @@ const SEO = props => {
   const meta = getSEOMeta(props, router, useGlobal()?.locale)
   const webFontUrl = siteConfig('FONT_URL')
 
+  // IndexNow configuration
+  const INDEXNOW_ENABLE = siteConfig('INDEXNOW_ENABLE', true, NOTION_CONFIG)
+  const INDEXNOW_API_KEY = siteConfig('INDEXNOW_API_KEY', '', NOTION_CONFIG)
+  const INDEXNOW_ENDPOINT = siteConfig('INDEXNOW_ENDPOINT', 'https://api.indexnow.org/indexnow', NOTION_CONFIG)
+
   useEffect(() => {
     // 使用WebFontLoader字体加载
     loadExternalResource(
@@ -103,11 +108,6 @@ const SEO = props => {
     null,
     NOTION_CONFIG
   )
-
-  // IndexNow configuration
-  const INDEXNOW_ENABLE = siteConfig('INDEXNOW_ENABLE', true, NOTION_CONFIG)
-  const INDEXNOW_API_KEY = siteConfig('INDEXNOW_API_KEY', '', NOTION_CONFIG)
-  const INDEXNOW_ENDPOINT = siteConfig('INDEXNOW_ENDPOINT', 'https://api.indexnow.org/indexnow', NOTION_CONFIG)
 
   const BLOG_FAVICON = siteConfig('BLOG_FAVICON', null, NOTION_CONFIG)
 
