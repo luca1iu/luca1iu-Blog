@@ -20,8 +20,12 @@ export default async function handler(req, res) {
     }
 
     // IndexNow configuration
-    const INDEXNOW_API_KEY = process.env.INDEXNOW_API_KEY || '9f6300395d7bf2dcf99c10dca3524a6de98416692490d2b489d95209a21ee264'
+    const INDEXNOW_API_KEY = process.env.INDEXNOW_API_KEY || ''
     const INDEXNOW_ENDPOINT = process.env.INDEXNOW_ENDPOINT || 'https://api.indexnow.org/indexnow'
+
+    if (!INDEXNOW_API_KEY) {
+      return res.status(500).json({ error: 'INDEXNOW_API_KEY environment variable is not set' })
+    }
 
     // Prepare the IndexNow request
     const indexNowData = {

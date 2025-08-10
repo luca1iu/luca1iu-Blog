@@ -106,7 +106,7 @@ const SEO = props => {
 
   // IndexNow configuration
   const INDEXNOW_ENABLE = siteConfig('INDEXNOW_ENABLE', true, NOTION_CONFIG)
-  const INDEXNOW_API_KEY = siteConfig('INDEXNOW_API_KEY', '9f6300395d7bf2dcf99c10dca3524a6de98416692490d2b489d95209a21ee264', NOTION_CONFIG)
+  const INDEXNOW_API_KEY = siteConfig('INDEXNOW_API_KEY', '', NOTION_CONFIG)
   const INDEXNOW_ENDPOINT = siteConfig('INDEXNOW_ENDPOINT', 'https://api.indexnow.org/indexnow', NOTION_CONFIG)
 
   const BLOG_FAVICON = siteConfig('BLOG_FAVICON', null, NOTION_CONFIG)

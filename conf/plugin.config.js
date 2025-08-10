@@ -32,6 +32,6 @@ module.exports = {
 
   // IndexNow - 实时通知搜索引擎内容更新
   INDEXNOW_ENABLE: process.env.NEXT_PUBLIC_INDEXNOW_ENABLE || true, // 是否启用IndexNow功能
-  INDEXNOW_API_KEY: process.env.INDEXNOW_API_KEY || '9f6300395d7bf2dcf99c10dca3524a6de98416692490d2b489d95209a21ee264', // IndexNow API密钥
+  INDEXNOW_API_KEY: process.env.INDEXNOW_API_KEY || '', // IndexNow API密钥 - 请设置环境变量
   INDEXNOW_ENDPOINT: process.env.INDEXNOW_ENDPOINT || 'https://api.indexnow.org/indexnow' // IndexNow API端点
 }
