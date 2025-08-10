@@ -38,7 +38,34 @@ const SEO = props => {
         })
       }
     })
-  }, [])
+
+    // IndexNow notification for new/updated content
+    if (INDEXNOW_ENABLE && post?.slug && typeof window !== 'undefined') {
+      const currentUrl = `${LINK}/${post.slug}`
+      
+      // Check if this is a new visit (you can implement more sophisticated logic)
+      const visitedKey = `visited_${post.slug}`
+      if (!localStorage.getItem(visitedKey)) {
+        // Notify IndexNow about this URL
+        fetch(INDEXNOW_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            host: new URL(LINK).hostname,
+            key: INDEXNOW_API_KEY,
+            urlList: [currentUrl]
+          })
+        }).catch(error => {
+          console.log('IndexNow notification failed:', error)
+        })
+        
+        // Mark as visited
+        localStorage.setItem(visitedKey, Date.now().toString())
+      }
+    }
+  }, [INDEXNOW_ENABLE, INDEXNOW_API_KEY, INDEXNOW_ENDPOINT, post?.slug, LINK])
 
   // SEO关键词
   const KEYWORDS = siteConfig('KEYWORDS')
@@ -76,6 +103,11 @@ const SEO = props => {
     null,
     NOTION_CONFIG
   )
+
+  // IndexNow configuration
+  const INDEXNOW_ENABLE = siteConfig('INDEXNOW_ENABLE', true, NOTION_CONFIG)
+  const INDEXNOW_API_KEY = siteConfig('INDEXNOW_API_KEY', '9f6300395d7bf2dcf99c10dca3524a6de98416692490d2b489d95209a21ee264', NOTION_CONFIG)
+  const INDEXNOW_ENDPOINT = siteConfig('INDEXNOW_ENDPOINT', 'https://api.indexnow.org/indexnow', NOTION_CONFIG)
 
   const BLOG_FAVICON = siteConfig('BLOG_FAVICON', null, NOTION_CONFIG)
 

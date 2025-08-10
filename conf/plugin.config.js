@@ -28,5 +28,10 @@ module.exports = {
 
   // 邮件
   MAILCHIMP_LIST_ID: process.env.MAILCHIMP_LIST_ID || null, // 开启mailichimp邮件订阅 客户列表ID ，具体使用方法参阅文档
-  MAILCHIMP_API_KEY: process.env.MAILCHIMP_API_KEY || null // 开启mailichimp邮件订阅 APIkey
+  MAILCHIMP_API_KEY: process.env.MAILCHIMP_API_KEY || null, // 开启mailichimp邮件订阅 APIkey
+
+  // IndexNow - 实时通知搜索引擎内容更新
+  INDEXNOW_ENABLE: process.env.NEXT_PUBLIC_INDEXNOW_ENABLE || true, // 是否启用IndexNow功能
+  INDEXNOW_API_KEY: process.env.INDEXNOW_API_KEY || '9f6300395d7bf2dcf99c10dca3524a6de98416692490d2b489d95209a21ee264', // IndexNow API密钥
+  INDEXNOW_ENDPOINT: process.env.INDEXNOW_ENDPOINT || 'https://api.indexnow.org/indexnow' // IndexNow API端点
 }
