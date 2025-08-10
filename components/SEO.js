@@ -144,16 +144,16 @@ const SEO = props => {
         />
       )}
       <meta name='keywords' content={keywords} />
-      <meta name='description' content={description} />
+      <meta name='description' content={description && description.length > 160 ? description.substring(0, 157) + '...' : description} />
       <meta property='og:locale' content={lang} />
       <meta property='og:title' content={title} />
-      <meta property='og:description' content={description} />
+      <meta property='og:description' content={description && description.length > 160 ? description.substring(0, 157) + '...' : description} />
       <meta property='og:url' content={url} />
       <meta property='og:image' content={image} />
       <meta property='og:site_name' content={title} />
       <meta property='og:type' content={type} />
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:description' content={description} />
+      <meta name='twitter:description' content={description && description.length > 160 ? description.substring(0, 157) + '...' : description} />
       <meta name='twitter:title' content={title} />
 
       {COMMENT_WEBMENTION_ENABLE && (

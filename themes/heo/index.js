@@ -304,6 +304,13 @@ const LayoutSlug = props => {
               id='article-wrapper'
               itemScope
               itemType='https://schema.org/Movie'>
+              {/* 文章标题 - H1标签 */}
+              <section className='wow fadeInUp p-5 justify-center mx-auto' data-wow-delay='.1s'>
+                <h1 className='text-3xl md:text-4xl font-bold text-black dark:text-white text-center mb-6'>
+                  {post?.title}
+                </h1>
+              </section>
+
               {/* Notion文章主体 */}
               <section
                 className='wow fadeInUp p-5 justify-center mx-auto'
