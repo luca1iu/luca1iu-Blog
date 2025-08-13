@@ -146,6 +146,12 @@ const nextConfig = {
             ],
             destination: 'https://:host/:path*',
             permanent: true
+          },
+          // 强制所有HTTP请求重定向到HTTPS
+          {
+            source: '/:path*',
+            destination: 'https://:host/:path*',
+            permanent: true
           }
         ]
       },
