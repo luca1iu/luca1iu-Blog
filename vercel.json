@@ -45,6 +45,21 @@
       "source": "/:path*",
       "destination": "https://:host/:path*",
       "permanent": true
+    },
+    {
+      "source": "/article/:slug*",
+      "destination": "https://:host/article/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/category/:category*",
+      "destination": "https://:host/category/:category*",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:tag*",
+      "destination": "https://:host/tag/:tag*",
+      "permanent": true
     }
   ]
 }
