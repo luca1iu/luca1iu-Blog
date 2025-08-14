@@ -9,8 +9,8 @@ const CONFIG = {
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   HEO_NOTICE_BAR: [
     { title: 'Welcome to my Blog', url: 'https://blog.luca-liu.com' },
-    { title: 'Willkommen auf meinem Blog', url: 'https://blog.luca-liu.com' },
-    { title: '欢迎来到我的博客', url: 'https://blog.luca-liu.com' },
+    { title: 'Willkommen auf meinem Blog', url: 'https://blog.luca-liu.com/de' },
+    { title: '欢迎来到我的博客', url: 'https://blog.luca-liu.com/zh' },
   ],
 
   // 英雄区左右侧组件颠倒位置
@@ -41,17 +41,14 @@ const CONFIG = {
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   HEO_INFOCARD_GREETINGS: [
     'Hi！I am',
-    '🔍 分享与热心帮助',
-    '🤝 专修交互与设计',
-    '🏃 脚踏实地行动派',
-    '🏠 智能家居小能手',
-    '🤖️ 数码科技爱好者',
-    '🧱 团队小组发动机'
+    '🔍 Data Analyst',
+    '🤝 Work in Germany',
+    '🏃 Content Creator'
   ],
 
   // 个人资料底部按钮
-  HEO_INFO_CARD_URL1: '/about',
-  HEO_INFO_CARD_ICON1: 'fas fa-user',
+  HEO_INFO_CARD_URL1: 'https://www.linkedin.com/in/lucaliu-data/',
+  HEO_INFO_CARD_ICON1: 'fab fa-linkedin',
   HEO_INFO_CARD_URL2: 'https://github.com/luca1iu',
   HEO_INFO_CARD_ICON2: 'fab fa-github',
   HEO_INFO_CARD_URL3: 'https://www.blog.luca-liu.com',
