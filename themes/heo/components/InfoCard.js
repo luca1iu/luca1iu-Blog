@@ -101,32 +101,16 @@ function MoreButton() {
  * 欢迎语
  */
 function GreetingsWords() {
-  // 硬编码的fallback配置，确保即使所有配置都失败也能显示内容
-  const hardcodedGreetings = [
+  // 直接在组件中硬编码配置，确保一定能显示
+  const greetings = [
     'Hi！I am',
     '🔍 Data Analyst',
     '🤝 Work in Germany',
     '🏃 Content Creator'
   ]
   
-  let greetings = hardcodedGreetings
-  
-  try {
-    // 尝试从主题配置加载
-    if (CONFIG && CONFIG.HEO_INFOCARD_GREETINGS && Array.isArray(CONFIG.HEO_INFOCARD_GREETINGS)) {
-      greetings = CONFIG.HEO_INFOCARD_GREETINGS
-      console.log('✅ 成功从主题配置加载问候语:', greetings)
-    } else {
-      console.log('⚠️ 主题配置加载失败，使用硬编码配置:', hardcodedGreetings)
-    }
-  } catch (error) {
-    console.warn('❌ 配置加载出错，使用硬编码配置:', error)
-  }
-  
-  // 调试日志
-  console.log('🔍 CONFIG对象:', CONFIG)
-  console.log('🔍 HEO_INFOCARD_GREETINGS:', CONFIG?.HEO_INFOCARD_GREETINGS)
-  console.log('🔍 最终使用的问候语:', greetings)
+  console.log('🚀 硬编码问候语配置:', greetings)
+  console.log('🚀 当前CONFIG对象:', CONFIG)
   
   const [greeting, setGreeting] = useState(greetings[0])
   
