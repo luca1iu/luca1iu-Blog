@@ -102,16 +102,27 @@ function MoreButton() {
  */
 function GreetingsWords() {
   // 直接使用主题配置，避免被Notion配置覆盖
-  const greetings = CONFIG.HEO_INFOCARD_GREETINGS || [
+  // 添加fallback配置，确保即使CONFIG加载失败也能显示内容
+  const fallbackGreetings = [
     'Hi！I am',
     '🔍 Data Analyst',
     '🤝 Work in Germany',
     '🏃 Content Creator'
   ]
   
+  let greetings = fallbackGreetings
+  
+  try {
+    if (CONFIG && CONFIG.HEO_INFOCARD_GREETINGS && Array.isArray(CONFIG.HEO_INFOCARD_GREETINGS)) {
+      greetings = CONFIG.HEO_INFOCARD_GREETINGS
+    }
+  } catch (error) {
+    console.warn('Failed to load CONFIG, using fallback greetings:', error)
+  }
+  
   // 调试日志
   console.log('CONFIG:', CONFIG)
-  console.log('HEO_INFOCARD_GREETINGS:', CONFIG.HEO_INFOCARD_GREETINGS)
+  console.log('HEO_INFOCARD_GREETINGS:', CONFIG?.HEO_INFOCARD_GREETINGS)
   console.log('Final greetings:', greetings)
   
   const [greeting, setGreeting] = useState(greetings[0])
