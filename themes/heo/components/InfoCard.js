@@ -101,35 +101,41 @@ function MoreButton() {
  * 欢迎语
  */
 function GreetingsWords() {
-  // 直接使用主题配置，避免被Notion配置覆盖
-  // 添加fallback配置，确保即使CONFIG加载失败也能显示内容
-  const fallbackGreetings = [
+  // 硬编码的fallback配置，确保即使所有配置都失败也能显示内容
+  const hardcodedGreetings = [
     'Hi！I am',
     '🔍 Data Analyst',
     '🤝 Work in Germany',
     '🏃 Content Creator'
   ]
   
-  let greetings = fallbackGreetings
+  let greetings = hardcodedGreetings
   
   try {
+    // 尝试从主题配置加载
     if (CONFIG && CONFIG.HEO_INFOCARD_GREETINGS && Array.isArray(CONFIG.HEO_INFOCARD_GREETINGS)) {
       greetings = CONFIG.HEO_INFOCARD_GREETINGS
+      console.log('✅ 成功从主题配置加载问候语:', greetings)
+    } else {
+      console.log('⚠️ 主题配置加载失败，使用硬编码配置:', hardcodedGreetings)
     }
   } catch (error) {
-    console.warn('Failed to load CONFIG, using fallback greetings:', error)
+    console.warn('❌ 配置加载出错，使用硬编码配置:', error)
   }
   
   // 调试日志
-  console.log('CONFIG:', CONFIG)
-  console.log('HEO_INFOCARD_GREETINGS:', CONFIG?.HEO_INFOCARD_GREETINGS)
-  console.log('Final greetings:', greetings)
+  console.log('🔍 CONFIG对象:', CONFIG)
+  console.log('🔍 HEO_INFOCARD_GREETINGS:', CONFIG?.HEO_INFOCARD_GREETINGS)
+  console.log('🔍 最终使用的问候语:', greetings)
   
   const [greeting, setGreeting] = useState(greetings[0])
+  
   // 每次点击，随机获取greetings中的一个
   const handleChangeGreeting = () => {
     const randomIndex = Math.floor(Math.random() * greetings.length)
-    setGreeting(greetings[randomIndex])
+    const newGreeting = greetings[randomIndex]
+    setGreeting(newGreeting)
+    console.log('🔄 切换问候语:', newGreeting)
   }
 
   return (
