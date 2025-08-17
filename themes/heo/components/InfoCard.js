@@ -14,6 +14,9 @@ import Card from './Card'
  * @returns
  */
 export function InfoCard(props) {
+  // 添加明显的调试信息
+  console.log('🚀🚀🚀 InfoCard组件被加载了！', props)
+  
   const { siteInfo, notice } = props
   const router = useRouter()
   // 在文章详情页特殊处理
