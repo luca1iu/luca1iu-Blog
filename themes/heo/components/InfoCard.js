@@ -23,8 +23,13 @@ export function InfoCard(props) {
   const url2 = siteConfig('HEO_INFO_CARD_URL2', null, CONFIG)
   const icon2 = siteConfig('HEO_INFO_CARD_ICON2', null, CONFIG)
   
+  // 强制隐藏GitHub按钮
+  const finalUrl2 = null
+  const finalIcon2 = null
+  
   // 临时调试信息
   console.log('🔍 Debug InfoCard config:', { url1, icon1, url2, icon2 })
+  console.log('🔍 Final config:', { url1, icon1, finalUrl2, finalIcon2 })
   
   return (
     <Card className='wow fadeInUp bg-[#4f65f0] dark:bg-yellow-600 text-white flex flex-col w-72 overflow-hidden relative'>
@@ -59,10 +64,10 @@ export function InfoCard(props) {
               </SmartLink>
             </div>
           )}
-          {url2 && (
+          {finalUrl2 && (
             <div className='bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
-              <SmartLink href={url2}>
-                <i className={icon2} />
+              <SmartLink href={finalUrl2}>
+                <i className={finalIcon2} />
               </SmartLink>
             </div>
           )}
