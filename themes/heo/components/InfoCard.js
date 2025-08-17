@@ -14,14 +14,6 @@ import Card from './Card'
  * @returns
  */
 export function InfoCard(props) {
-  // 添加明显的调试信息
-  console.log('🚀🚀🚀 InfoCard组件被加载了！', props)
-  
-  // 强制弹窗确认代码执行
-  if (typeof window !== 'undefined') {
-    alert('🚀 InfoCard组件已加载！问候语应该更新了！')
-  }
-  
   const { siteInfo, notice } = props
   const router = useRouter()
   // 在文章详情页特殊处理
@@ -109,25 +101,16 @@ function MoreButton() {
  * 欢迎语
  */
 function GreetingsWords() {
-  // 直接在组件中硬编码配置，确保一定能显示
-  const greetings = [
-    'Hi！I am',
-    '🔍 Data Analyst',
-    '🤝 Work in Germany',
-    '🏃 Content Creator'
-  ]
-  
-  console.log('🚀 硬编码问候语配置:', greetings)
-  console.log('🚀 当前CONFIG对象:', CONFIG)
-  
-  const [greeting, setGreeting] = useState(greetings[0])
+  const greetings = siteConfig('HEO_INFOCARD_GREETINGS', null, CONFIG)
+  const [greeting, setGreeting] = useState(greetings?.[0] || 'Hi！I am')
   
   // 每次点击，随机获取greetings中的一个
   const handleChangeGreeting = () => {
-    const randomIndex = Math.floor(Math.random() * greetings.length)
-    const newGreeting = greetings[randomIndex]
-    setGreeting(newGreeting)
-    console.log('🔄 切换问候语:', newGreeting)
+    if (greetings && greetings.length > 0) {
+      const randomIndex = Math.floor(Math.random() * greetings.length)
+      const newGreeting = greetings[randomIndex]
+      setGreeting(newGreeting)
+    }
   }
 
   return (
