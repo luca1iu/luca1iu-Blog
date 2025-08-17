@@ -101,7 +101,13 @@ function MoreButton() {
  * 欢迎语
  */
 function GreetingsWords() {
-  const greetings = siteConfig('HEO_INFOCARD_GREETINGS', null, CONFIG)
+  // 直接使用主题配置，避免被Notion配置覆盖
+  const greetings = CONFIG.HEO_INFOCARD_GREETINGS || [
+    'Hi！I am',
+    '🔍 Data Analyst',
+    '🤝 Work in Germany',
+    '🏃 Content Creator'
+  ]
   const [greeting, setGreeting] = useState(greetings[0])
   // 每次点击，随机获取greetings中的一个
   const handleChangeGreeting = () => {
