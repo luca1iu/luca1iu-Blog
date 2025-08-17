@@ -133,25 +133,6 @@ const nextConfig = {
             source: '/feed',
             destination: '/rss/feed.xml',
             permanent: true
-          },
-          // HTTPS强制重定向
-          {
-            source: '/:path*',
-            has: [
-              {
-                type: 'header',
-                key: 'x-forwarded-proto',
-                value: 'http'
-              }
-            ],
-            destination: 'https://:host/:path*',
-            permanent: true
-          },
-          // 强制所有HTTP请求重定向到HTTPS
-          {
-            source: '/:path*',
-            destination: 'https://:host/:path*',
-            permanent: true
           }
         ]
       },
