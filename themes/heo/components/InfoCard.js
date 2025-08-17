@@ -108,6 +108,12 @@ function GreetingsWords() {
     '🤝 Work in Germany',
     '🏃 Content Creator'
   ]
+  
+  // 调试日志
+  console.log('CONFIG:', CONFIG)
+  console.log('HEO_INFOCARD_GREETINGS:', CONFIG.HEO_INFOCARD_GREETINGS)
+  console.log('Final greetings:', greetings)
+  
   const [greeting, setGreeting] = useState(greetings[0])
   // 每次点击，随机获取greetings中的一个
   const handleChangeGreeting = () => {
