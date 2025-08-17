@@ -17,6 +17,11 @@ export function InfoCard(props) {
   // 添加明显的调试信息
   console.log('🚀🚀🚀 InfoCard组件被加载了！', props)
   
+  // 强制弹窗确认代码执行
+  if (typeof window !== 'undefined') {
+    alert('🚀 InfoCard组件已加载！问候语应该更新了！')
+  }
+  
   const { siteInfo, notice } = props
   const router = useRouter()
   // 在文章详情页特殊处理
