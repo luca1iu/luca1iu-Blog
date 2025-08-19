@@ -1,5 +1,7 @@
 import CONFIG from '../config'
 import { siteConfig } from '@/lib/config'
+import { useEffect, useState } from 'react'
+import { getPageViews } from '@/lib/analytics/googleAnalytics'
 
 /**
  * 博客统计卡牌
@@ -17,6 +19,32 @@ export function AnalyticsCard(props) {
   const siteVisitorTitle = siteConfig('HEO_SITE_VISITOR_TITLE', null, CONFIG)
 
   const { postCount } = props
+  const [analyticsData, setAnalyticsData] = useState({
+    pageViews: '...',
+    uniqueVisitors: '...'
+  })
+
+  // 从 Google Analytics 获取数据
+  useEffect(() => {
+    const fetchAnalyticsData = async () => {
+      try {
+        const data = await getPageViews()
+        setAnalyticsData({
+          pageViews: data.pageViews,
+          uniqueVisitors: data.uniqueVisitors
+        })
+      } catch (error) {
+        console.error('Failed to fetch analytics data:', error)
+        setAnalyticsData({
+          pageViews: 'N/A',
+          uniqueVisitors: 'N/A'
+        })
+      }
+    }
+
+    fetchAnalyticsData()
+  }, [])
+
   return <>
         <div className='text-sm flex flex-col space-y-1 justify-center px-3' style={{fontSize: '14px'}}>
             <div className='inline'>
@@ -34,13 +62,13 @@ export function AnalyticsCard(props) {
             <div className='inline'>
                 <div className='flex justify-between'>
                     <div>{siteVisitTitle}</div>
-                    <div>Google Analytics</div>
+                    <div>{analyticsData.pageViews}</div>
                 </div>
             </div>
             <div className='inline'>
                 <div className='flex justify-between'>
                     <div>{siteVisitorTitle}</div>
-                    <div>Google Analytics</div>
+                    <div>{analyticsData.uniqueVisitors}</div>
                 </div>
             </div>
         </div>

@@ -3,6 +3,9 @@ import CopyRightDate from '@/components/CopyRightDate'
 import PoweredBy from '@/components/PoweredBy'
 import { siteConfig } from '@/lib/config'
 import SocialButton from './SocialButton'
+import { useEffect, useState } from 'react'
+import { getPageViews } from '@/lib/analytics/googleAnalytics'
+
 /**
  * 页脚
  * @returns
@@ -11,6 +14,32 @@ const Footer = () => {
   const BEI_AN = siteConfig('BEI_AN')
   const BEI_AN_LINK = siteConfig('BEI_AN_LINK')
   const BIO = siteConfig('BIO')
+  const [analyticsData, setAnalyticsData] = useState({
+    pageViews: '...',
+    uniqueVisitors: '...'
+  })
+
+  // 从 Google Analytics 获取数据
+  useEffect(() => {
+    const fetchAnalyticsData = async () => {
+      try {
+        const data = await getPageViews()
+        setAnalyticsData({
+          pageViews: data.pageViews,
+          uniqueVisitors: data.uniqueVisitors
+        })
+      } catch (error) {
+        console.error('Failed to fetch analytics data:', error)
+        setAnalyticsData({
+          pageViews: 'N/A',
+          uniqueVisitors: 'N/A'
+        })
+      }
+    }
+
+    fetchAnalyticsData()
+  }, [])
+
   return (
     <footer className='relative flex-shrink-0 bg-white dark:bg-[#1a191d] justify-center text-center m-auto w-full leading-6  text-gray-600 dark:text-gray-100 text-sm'>
       {/* 颜色过度区 */}
@@ -54,13 +83,13 @@ const Footer = () => {
           )}
           <BeiAnGongAn />
 
-          <span className='hidden busuanzi_container_site_pv'>
+          <span className='inline'>
             <i className='fas fa-eye' />
-            <span className='px-1 busuanzi_value_site_pv'> </span>{' '}
+            <span className='px-1'>{analyticsData.pageViews}</span>{' '}
           </span>
-          <span className='pl-2 hidden busuanzi_container_site_uv'>
+          <span className='pl-2 inline'>
             <i className='fas fa-users' />{' '}
-            <span className='px-1 busuanzi_value_site_uv'> </span>{' '}
+            <span className='px-1'>{analyticsData.uniqueVisitors}</span>{' '}
           </span>
 
           {/* <h1 className='text-xs pt-4 text-light-400 dark:text-gray-400'>{title} {siteConfig('BIO') && <>|</>} {siteConfig('BIO')}</h1> */}
