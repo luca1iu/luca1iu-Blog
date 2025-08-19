@@ -31,16 +31,16 @@ export function AnalyticsCard(props) {
                     <div>{diffDays} Days</div>
                 </div>
             </div>
-            <div className='hidden busuanzi_container_page_pv'>
+            <div className='inline'>
                 <div className='flex justify-between'>
                     <div>{siteVisitTitle}</div>
-                    <div className='busuanzi_value_page_pv' />
+                    <div>Google Analytics</div>
                 </div>
             </div>
-            <div className='hidden busuanzi_container_site_uv'>
+            <div className='inline'>
                 <div className='flex justify-between'>
                     <div>{siteVisitorTitle}</div>
-                    <div className='busuanzi_value_site_uv' />
+                    <div>Google Analytics</div>
                 </div>
             </div>
         </div>
